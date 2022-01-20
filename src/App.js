@@ -19,6 +19,13 @@ const LIST_COUNTRIES = gql`
       languages {
         name
       }
+    },
+
+    continents{
+      name
+    }
+    languages{
+      name
     }
   }
 `;
@@ -29,15 +36,15 @@ export default function App() {
   if (loading || error) {
     return <p>{error ? error.message : 'Loading...'}</p>;
   }
-  
+  console.log(data)
   
   return (
     <div className="App">
-      <Header/>
+      <Header languages={data.languages} continents={data.continents}/>
       <div className="grid-display">
         {
-          data.countries.map( (ele, key) => (
-            <DisplayCountry country={ele} key={key}/>
+          data.countries.map( (ele) => (
+            <DisplayCountry country={ele} key={ele.code}/>
           ))
         }
       </div>

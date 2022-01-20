@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .header{
-    max-width: 960px;
+    max-width: 1080px;
     padding: 0 22px;
     height: 70px;
     box-sizing: border-box;
@@ -57,7 +57,7 @@
     border: none;
     font-family: 'Roboto', sans-serif;
 }
-@media (max-width: 1000px){
+@media (max-width: 1040px){
     .menu{
         display: block;
         position: absolute;

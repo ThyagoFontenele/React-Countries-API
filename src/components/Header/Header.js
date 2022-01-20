@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "./Header.css";
 
 
-export default function Header(){
+export default function Header({languages, continents}){
     const [toggle, setToggle] = useState(false);
     const [active, setActive] = useState('');
 
@@ -32,18 +32,22 @@ export default function Header(){
                                 <label className="labels" for="continente">Continente:</label>
                                 <select id="continente" className="selects">
                                     <option value="0">Nenhum</option>
+                                    {continents.map((continent, key) => (
+                                        <option key={key} value={continent.name}>
+                                            {continent.name}
+                                        </option>
+                                    ))}
                                 </select>
                             </div>   
-                            <div className="options">
-                                <label className="labels" for="code">Code:</label>
-                                <select id="code" className="selects" >
-                                    <option value="0">Nenhum</option>
-                                </select>
-                            </div>
                             <div className="options">
                                 <label className="labels" for="idiomas">Idioma:</label>
                                 <select id="idiomas" className="selects"> 
                                     <option value="0">Nenhum</option>
+                                    {languages.map((language, key) => (
+                                        <option key={key} value={language.name}>
+                                            {language.name}
+                                        </option>
+                                    ))}
                                 </select>   
                             </div>
                             <button className="btn_apply">Aplicar</button>
