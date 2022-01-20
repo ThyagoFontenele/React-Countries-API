@@ -1,7 +1,7 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
-
+import DisplayCountry from './components/DisplayCountry/DisplayCountry';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -24,18 +24,23 @@ const LIST_COUNTRIES = gql`
 `;
 
 export default function App() {
+ 
   const {data, loading, error} = useQuery(LIST_COUNTRIES, {client});
   if (loading || error) {
     return <p>{error ? error.message : 'Loading...'}</p>;
   }
-  const iso = (data.countries[0].code).toLowerCase();
-  const bandeira = `https://www.bandeirasnacionais.com/data/flags/h80/${iso}.webp`;
-  console.log(data.countries[2].name);
+  
+  
   return (
     <div className="App">
-
+      <div className="grid-display">
+        {
+          data.countries.map( (ele, key) => (
+            <DisplayCountry country={ele} key={key}/>
+          ))
+        }
+      </div>
       
-      <img src={bandeira} alt="pais"/>
     </div>
   );
 }
