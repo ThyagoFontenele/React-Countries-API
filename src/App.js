@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
 import DisplayCountry from './components/DisplayCountry/DisplayCountry';
-
+import Header from './components/Header/Header'
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   uri: 'https://countries.trevorblades.com'
@@ -33,6 +33,7 @@ export default function App() {
   
   return (
     <div className="App">
+      <Header/>
       <div className="grid-display">
         {
           data.countries.map( (ele, key) => (

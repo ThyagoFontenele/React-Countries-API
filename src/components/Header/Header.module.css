@@ -1,0 +1,15 @@
+.headerBody{
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 70px;
+    box-sizing: border-box;
+}
