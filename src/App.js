@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
 import DisplayCountry from './components/DisplayCountry/DisplayCountry';
 import Header from './components/Header/Header'
