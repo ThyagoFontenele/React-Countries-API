@@ -23,7 +23,7 @@ export default function Header(){
                 <div className="header">
                     <div>
                         <label className="labels" for="">Nome:</label>
-                        <input type="text" placeholder="Digite aqui o nome do país."/>
+                        <input type="text" placeholder="Digite aqui o nome do país." className="input"/>
                     </div> 
                     <nav id="nav" className={active}>
                         <button className="btn_menu" onClick={() => toggleMenu()} ><span className="hamburger"></span></button>

@@ -1,5 +1,6 @@
 body{
-    background-color: rgb(27, 27, 27);
+    background-image: linear-gradient(rgb(212, 4, 4),rgb(206, 135, 5),rgb(199, 199, 4),rgb(2, 102, 2),rgb(2, 2, 202),rgb(64, 2, 109));
+
 }
 .App{
     display: flex;
