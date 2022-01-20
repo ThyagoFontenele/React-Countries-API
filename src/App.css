@@ -1,7 +1,17 @@
 .grid-display{
     display: grid;
     max-width: 1000px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 30px auto;
     gap: 50px;
+}
+@media (max-width: 760px){
+    .grid-display{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 0px){
+    .grid-display{
+        grid-template-columns: 1fr;
+    }
 }
