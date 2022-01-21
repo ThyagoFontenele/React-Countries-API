@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 .header{
-    max-width: 1080px;
-    padding: 0 22px;
+    max-width: 1200px;
+    padding: 0 20px;
     height: 70px;
     box-sizing: border-box;
     margin: 0 auto;
@@ -41,7 +41,7 @@
 
 }
 .labels{
-    padding-right: 5px;
+    padding-right: 10px;
     font-size: 1.05rem;
     font-family: 'Roboto', sans-serif;
 }
@@ -57,7 +57,7 @@
     border: none;
     font-family: 'Roboto', sans-serif;
 }
-@media (max-width: 1040px){
+@media (max-width: 1020px){
     .menu{
         display: block;
         position: absolute;
@@ -65,7 +65,6 @@
         top: 70px;
         background-color:black;
         width: 100%;
-        padding: 0 22px;
         overflow: hidden;
         transition: .3s;
         box-sizing: border-box;
