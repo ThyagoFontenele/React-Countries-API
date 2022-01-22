@@ -3,6 +3,7 @@
     background-color: #000;
     width: 100%;
     box-sizing: border-box;
+    position: fixed;
 }
 .header{
     max-width: 1200px;
@@ -57,10 +58,10 @@
     border: none;
     font-family: 'Roboto', sans-serif;
 }
-@media (max-width: 1020px){
+@media (max-width: 900px){
     .menu{
         display: block;
-        position: absolute;
+        position: fixed;
         left: -100%;
         top: 70px;
         background-color:black;

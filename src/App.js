@@ -1,8 +1,9 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
 import DisplayCountry from './components/DisplayCountry/DisplayCountry';
 import Header from './components/Header/Header'
+
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   uri: 'https://countries.trevorblades.com'
@@ -16,40 +17,61 @@ const LIST_COUNTRIES = gql`
       capital
       currency
       emoji
+      continent{
+        name
+      }
       languages {
         name
       }
     },
-
     continents{
-      name
-    }
-    languages{
       name
     }
   }
 `;
 
 export default function App() {
- 
+  const [nameCountry, setNameCountry] = useState('');
+  const [continentCountry, setContinentCountry] = useState('');
+  function FindByName(name, continent) {
+    setNameCountry(name);
+    setContinentCountry(continent);
+  }
+
   const {data, loading, error} = useQuery(LIST_COUNTRIES, {client});
   if (loading || error) {
-    return <p>{error ? error.message : 'Loading...'}</p>;
+    return <p className="Loading">{error ? error.message : 'Loading...'}</p>;
   }
-  console.log(data)
   
+ 
   return (
-    <div className="App">
-      <Header languages={data.languages} continents={data.continents}/>
-      <div className="grid-display">
-        {
-          data.countries.map( (ele) => (
-            <DisplayCountry country={ele} key={ele.code}/>
-          ))
-        }
+    <>
+      <div className="App">
+        <Header continents={data.continents} FindByName={FindByName}/>
+        
+        <div className="div-grid">
+            <ul className="grid-display">
+            
+              {data.countries.filter((ele) => {
+                if(nameCountry === ''){
+                  return ele;
+                }else if(ele.name.toLowerCase().includes(nameCountry.toLowerCase())){
+                  return ele;
+                }
+              }).map( (ele) => (
+  
+                <li key={ele.name}>
+                  <DisplayCountry country={ele} />
+                </li>
+              ))
+            }
+            </ul>
+         
+        </div>
+        
       </div>
-      
-    </div>
+    </>
+   
   );
 }
 
