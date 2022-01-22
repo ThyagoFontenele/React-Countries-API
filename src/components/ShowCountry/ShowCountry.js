@@ -6,13 +6,14 @@ export default function ShowCountry({country}){
     const iso = (country.code).toLowerCase();
     const bandeira = `https://www.bandeirasnacionais.com/data/flags/h80/${iso}.webp`;
     const [idiomaText, setIdiomaText ] = useState('');
-
     useEffect(() => {
         if(country.languages.length > 1){
             setIdiomaText('Idiomas');
-        }else{ setIdiomaText('Idioma');}
+        }else{ 
+            setIdiomaText('Idioma');
+        }
         
-    })
+    }, [])
 
     return(
         <>
