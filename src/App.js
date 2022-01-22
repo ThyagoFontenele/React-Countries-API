@@ -14,13 +14,8 @@ const LIST_COUNTRIES = gql`
     countries {
       code
       name
-      capital
-      currency
       emoji
       continent{
-        name
-      }
-      languages {
         name
       }
     },
@@ -53,7 +48,7 @@ export default function App() {
             <ul className="grid-display">
             
               {data.countries.filter((ele) => {
-                if(continentCountry !==''){
+                if(continentCountry !== ''){
                   if(ele.continent.name === continentCountry){
                     if(nameCountry === ''){
                       return ele;
@@ -62,19 +57,19 @@ export default function App() {
                     }
                   }
                 }else{
-                  
-                    if(nameCountry === ''){
+                  if(nameCountry === ''){
                       return ele;
-                    }else if(ele.name.toLowerCase().includes(nameCountry.toLowerCase())){
+                  }else if(ele.name.toLowerCase().includes(nameCountry.toLowerCase())){
                       return ele;
-                    }
-                  
+                  }  
                 }
                 
               }).map( (ele) => (
                 
                 <li key={ele.name}>
+
                   <DisplayCountry country={ele} />
+
                 </li>
               ))
             }

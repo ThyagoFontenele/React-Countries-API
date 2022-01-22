@@ -10,7 +10,7 @@ export default function routes() {
                     <App />
                 </Route>
                 <Route exact path="/countries/:name">
-                    <Country country={"name"}/>
+                    <Country/>
                 </Route>
             </Switch>
         </Router>
