@@ -41,7 +41,7 @@ export default function Country(){
                     return ele
                 } 
             }).map( (ele) => (     
-                <ShowCountry country={ele} />
+                <ShowCountry country={ele} key={ele.name} />
               ))
             }
             

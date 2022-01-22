@@ -31,7 +31,7 @@ export default function Header({continents, FindByName}){
             <header className="headerBody">
                 <div className="header">
                     <div>
-                        <label className="labels" for="">Nome:</label>
+                        <label className="labels">Nome:</label>
                         <input type="text" value={name} onChange={ e => setName(e.target.value)  } placeholder="Digite aqui o nome do país." className="input"/>
                     </div> 
 
@@ -39,7 +39,7 @@ export default function Header({continents, FindByName}){
                         <button className="btn_menu" onClick={() => toggleMenu()} ><span className="hamburger"></span></button>
                         <div className="menu">
                             <div className="options">
-                                <label className="labels" for="continente">Continente:</label>
+                                <label className="labels" htmlFor="continente">Continente:</label>
                                 <select id="continente"  className="selects" onChange={e => setSavedContinent(e.target.value)} >
                                     <option value="">Todos</option>
                                     {continents.map((continent, key) => (

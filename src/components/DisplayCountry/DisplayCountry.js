@@ -19,7 +19,7 @@ export default function DisplayCountry({country}){
                 
                 <div className={classes.cardCountry}>
                     <h1>{country.name}</h1>
-                    <img src={bandeira} alt={country.name} />
+                    <img src={bandeira} alt={`bandeira ${country.name}`} />
                     <h2>{country.emoji}</h2>
                 </div>
             </Link>
