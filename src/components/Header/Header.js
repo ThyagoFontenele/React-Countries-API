@@ -41,7 +41,7 @@ export default function Header({continents, FindByName}){
                             <div className="options">
                                 <label className="labels" for="continente">Continente:</label>
                                 <select id="continente"  className="selects" onChange={e => setSavedContinent(e.target.value)} >
-                                    <option value="true">Todos</option>
+                                    <option value="">Todos</option>
                                     {continents.map((continent, key) => (
                                         <option key={key} value={continent.name}>
                                             {continent.name}

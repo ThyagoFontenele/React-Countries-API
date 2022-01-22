@@ -53,13 +53,26 @@ export default function App() {
             <ul className="grid-display">
             
               {data.countries.filter((ele) => {
-                if(nameCountry === ''){
-                  return ele;
-                }else if(ele.name.toLowerCase().includes(nameCountry.toLowerCase())){
-                  return ele;
+                if(continentCountry !==''){
+                  if(ele.continent.name === continentCountry){
+                    if(nameCountry === ''){
+                      return ele;
+                    }else if(ele.name.toLowerCase().includes(nameCountry.toLowerCase())){
+                      return ele;
+                    }
+                  }
+                }else{
+                  
+                    if(nameCountry === ''){
+                      return ele;
+                    }else if(ele.name.toLowerCase().includes(nameCountry.toLowerCase())){
+                      return ele;
+                    }
+                  
                 }
+                
               }).map( (ele) => (
-  
+                
                 <li key={ele.name}>
                   <DisplayCountry country={ele} />
                 </li>
