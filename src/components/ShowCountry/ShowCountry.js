@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import classes from "./ShowCountry.module.css";
 import PngBack from '../../assets/pngwing.com.png';
 import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+
 export default function ShowCountry({country}){
     const iso = (country.code).toLowerCase();
     const bandeira = `https://www.bandeirasnacionais.com/data/flags/h80/${iso}.webp`;
@@ -29,6 +31,7 @@ export default function ShowCountry({country}){
                     <p><span>Moeda:</span> {country.currency}</p>
                 </div>
             </div>
+            <Footer></Footer>
         </>
     )
 }

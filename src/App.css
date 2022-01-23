@@ -16,6 +16,7 @@
 }
 .div-grid{
     margin: 0 auto;
+    min-height: calc(100vh - 50px);
 }
 .grid-display{
     display: grid;

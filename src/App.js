@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
 import DisplayCountry from './components/DisplayCountry/DisplayCountry';
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -76,8 +77,9 @@ export default function App() {
             </ul>
          
         </div>
-        
+        <Footer></Footer>
       </div>
+
     </>
    
   );
